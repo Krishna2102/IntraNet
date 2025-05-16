@@ -48,9 +48,13 @@ const MenuItem = ({ label, items, to }) => {
             <div
               key={index}
               className="px-4 py-2 hover:bg-violet-600 hover:text-white text-gray-800 cursor-pointer"
-              onClick={() => alert(`${item} clicked!`)}
-            >
-              {item}
+              onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (item.to) navigate(item.to);
+        }}
+      >
+              {item.label}
             </div>
           ))}
         </div>
@@ -80,10 +84,14 @@ export default function Navbar() {
       {/* Menu Items */}
       <div className="flex space-x-6 items-center">
         <MenuItem label="Home" to="/"/>
-        <MenuItem label="About" items={["Overview", "Mission", "History"]} />
-        <MenuItem label="Academics" items={["Programs", "Courses", "Timetable"]} />
-        <MenuItem label="Research" items={["Projects", "Publications", "Collaborations"]} />
-        <MenuItem label="People" items={["Faculty", "Staff", "Students", "Committees"]} />
+        <MenuItem label="About" items={[{label:"Aboutus", to:"/aboutus"},{label:"History", to:"/history"}, {label:"Connect Us", to:"/contact"}]} />
+        <MenuItem label="Academics" items={[{label:"Programms", to:"/aboutus"},{label:"Courses", to:"/history"}, {label:"Time Table", to:"/contact"},{label:"Research", to:"/research"}]} />
+<MenuItem label="People" items={[
+  { label: "Faculty", to: "/faculty" },
+  { label: "Staff", to: "/staff" },
+  { label: "Students", to: "/students" },
+  { label: "Committees", to: "/committees" }
+]} />
 <MenuItem
   label={
     <img
@@ -92,7 +100,7 @@ export default function Navbar() {
       className="h-8 w-8 rounded-full object-cover"
     />
   }
-  items={["Profile", "Settings", "Logout"]}
+  items={[{label:"Profile", to:"/profile"},{label:"Log Out", to:"/logout"}]}
 />      </div>
     </nav>
   );
