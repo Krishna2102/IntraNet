@@ -8,8 +8,10 @@ import Register from './components/auth/register';
 import Placement from './components/pages/Placement';
 import Faq from './components/pages/Faq';
 import Aboutus from './components/pages/Aboutus';
-import Btech from './components/courses/Btech';
-
+import Course from './components/courses/Course';
+import Contact from './components/pages/Contact';
+import News from './components/pages/News';
+import People from './components/people/People';
 function App() {
   return (
     <>
@@ -21,7 +23,10 @@ function App() {
         <Route  path="/placement" element={<Placement/>}/>
         <Route  path="/faq" element={<Faq/>}/>
         <Route  path="/aboutus" element={<Aboutus/>}/>
-        <Route  path="/courses/btech" element={<Btech/>}/>
+        <Route  path="/courses" element={<Course/>}/>
+        <Route  path="/connect" element={<Contact/>}/>
+        <Route  path="/news" element={<News/>}/>
+        <Route  path="/people" element={<People />}/>
         </Routes>
       </Router>
     </>

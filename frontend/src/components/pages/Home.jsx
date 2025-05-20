@@ -2,8 +2,12 @@ import React , {useState} from 'react';
 import Calendar from "react-calendar";
 import Simplecalender from './Calender';
 import Navbar from './Navbar';
+import Footer from './footer';
+import Aboutus from './Aboutus';
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
     const [value, setValue] = useState(new Date());
+    const navigate = useNavigate();
   return (
     <div className="font-sans">
     
@@ -20,49 +24,56 @@ const Home = () => {
     <p className="mt-4 font-semibold">
       An Atmosphere Of Cooperation And Helpfulness With A Patient Listening Ear To Our Students.
     </p>
-    <button className="mt-6 px-6 py-2 bg-violet-600 font-bold rounded hover:bg-gray-100 hover:text-violet-600">
+    <button className="mt-6 px-6 py-2 bg-violet-600 font-bold rounded hover:bg-gray-100 hover:text-violet-600" onClick={() => navigate("/aboutus")}>
+      
       Know More
     </button>
   </div>
-
+ 
   {/* Dark Overlay */}
   <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
      </section>
 
 
       {/* News + Events + Spotlight */}
-      <section className="grid grid-cols-3 gap-6 p-8">
-        <div>
-          <h2 className="text-xl font-bold mb-4">News</h2>
-          <ul className="space-y-4 ">
-            <li className='border-black  bg-slate-100 shadow-lg h-[140px] w-[450px] flex'>
-                <img src="https://macs.nitk.ac.in/sites/default/files/field/image/macsdep.jpg" alt="" className='h-[137px] w-[140px]' />
-              <p className="text-sm text-gray-500">04 April, 2025</p>
-              <p className="font-semibold">Details Regarding M.Tech Admissions</p>
-            </li>
-            <li className='border-black  bg-slate-100 shadow-lg h-[140px] w-[450px] flex'>
-                <img src="https://macs.nitk.ac.in/sites/default/files/field/image/macsdep.jpg" alt="" className='h-[137px] w-[140px]' />
-              <p className="text-sm text-gray-500">04 April, 2025</p>
-              <p className="font-semibold">Details Regarding M.Tech Admissions</p>
-            </li><li className='border-black  bg-slate-100 shadow-lg h-[140px] w-[450px] flex'>
-                <img src="https://macs.nitk.ac.in/sites/default/files/field/image/macsdep.jpg" alt="" className='h-[137px] w-[140px]' />
-              <p className="text-sm text-gray-500">04 April, 2025</p>
-              <p className="font-semibold">Details Regarding M.Tech Admissions</p>
-            </li>
-            {/* Add more items... */}
-          </ul>
-        </div>
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-8">
+  {/* News Section */}
+  <div>
+    <h2 className="text-xl font-bold mb-4">News</h2>
+    <ul className="space-y-4">
+      {[1, 2, 3].map((item, index) => (
+        <li
+          key={index}
+          className="bg-slate-100 flex flex-col sm:flex-row shadow-md rounded overflow-hidden"
+        >
+          <img
+            src="https://macs.nitk.ac.in/sites/default/files/field/image/macsdep.jpg"
+            alt=""
+            className="h-[140px] w-full sm:w-[140px] object-cover"
+          />
+          <div className="p-4">
+            <p className="text-sm text-gray-500">04 April, 2025</p>
+            <p className="font-semibold mt-1">
+              Details Regarding M.Tech Admissions
+            </p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
 
-        <div>
-          <h2 className="text-xl font-bold mb-4">Events</h2>
-          <p>No Future Events</p>
-        </div>
-      {/* calender */}
-        <div>
-            <Simplecalender/>
-        </div>
-        
-      </section>
+  {/* Events Section */}
+  <div>
+    <h2 className="text-xl font-bold mb-4">Events</h2>
+    <p>No Future Events</p>
+  </div>
+
+  {/* Calendar Section */}
+  <div>
+    <Simplecalender />
+  </div>
+</section>
+
 
       {/* Gallery Section */}
       <section className="bg-violet-600 text-white py-10 text-center">
@@ -90,12 +101,12 @@ const Home = () => {
   <h2 className="text-2xl font-bold text-iris mb-6 text-center">Photo Gallery</h2>
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     {[
-      '/gallery1.jpg',
-      '/gallery2.jpg',
-      '/gallery3.jpg',
-      '/gallery4.jpg',
-      '/gallery5.jpg',
-      '/gallery6.jpg',
+      'https://media.istockphoto.com/id/1413873774/photo/business-team-portrait.jpg?s=612x612&w=0&k=20&c=OHUc90dYEltDCewDAcq1YZy3HSAGT0jB9suKME7Pg1w=',
+      'https://media.istockphoto.com/id/1413873774/photo/business-team-portrait.jpg?s=612x612&w=0&k=20&c=OHUc90dYEltDCewDAcq1YZy3HSAGT0jB9suKME7Pg1w=',
+      'https://media.istockphoto.com/id/1413873774/photo/business-team-portrait.jpg?s=612x612&w=0&k=20&c=OHUc90dYEltDCewDAcq1YZy3HSAGT0jB9suKME7Pg1w=',
+      'https://media.istockphoto.com/id/1413873774/photo/business-team-portrait.jpg?s=612x612&w=0&k=20&c=OHUc90dYEltDCewDAcq1YZy3HSAGT0jB9suKME7Pg1w=',
+      'https://media.istockphoto.com/id/1413873774/photo/business-team-portrait.jpg?s=612x612&w=0&k=20&c=OHUc90dYEltDCewDAcq1YZy3HSAGT0jB9suKME7Pg1w=',
+      'https://media.istockphoto.com/id/1413873774/photo/business-team-portrait.jpg?s=612x612&w=0&k=20&c=OHUc90dYEltDCewDAcq1YZy3HSAGT0jB9suKME7Pg1w=',
     ].map((src, index) => (
       <img
         key={index}
@@ -108,32 +119,7 @@ const Home = () => {
 </section>
 
     {/* footer */}
-    <footer className="bg-violet-800 text-white py-8 px-8 mt-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between">
-        {/* Left Section */}
-        <div className="mb-6 md:mb-0">
-          <h3 className="text-lg font-bold">Department of Mathematical And Computational Sciences (MACS)</h3>
-          <p className="text-sm mt-2">
-            National Institute of Technology Karnataka <br />
-            Powai, Mumbai 400076, Maharashtra, India
-          </p>
-        </div>
-
-        {/* Right Section */}
-        <div>
-          <h4 className="text-md font-semibold mb-2">Quick Links</h4>
-          <ul className="text-sm space-y-1">
-            <li><a href="#" className="hover:underline">Contact Us</a></li>
-            <li><a href="#" className="hover:underline">Sitemap</a></li>
-            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="mt-6 text-center text-sm text-gray-300">
-        &copy; {new Date().getFullYear()} IIT Bombay - Electrical Engineering. All Rights Reserved.
-      </div>
-    </footer>
+    <Footer/>
     </div>
   );
 };

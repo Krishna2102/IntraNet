@@ -1,4 +1,6 @@
 import React from "react";
+import Navbar from '../pages/Navbar'
+import Footer from '../pages/footer'
 
 const subjects = [
   "Mathematics I",
@@ -34,6 +36,7 @@ const Btech = () => {
     <div className="flex p-6">
       {/* Left - Subjects */}
       <div className="w-1/3 border-r pr-6">
+      <h1 className="text-2xl font-semibold my-2 mt-[-15px] text-violet-700">BTECH</h1>
         <h2 className="text-2xl font-semibold mb-4 text-violet-700">Subjects</h2>
         <ul className="space-y-2 text-gray-700">
           {subjects.map((subject, index) => (
