@@ -12,6 +12,8 @@ import Course from './components/courses/Course';
 import Contact from './components/pages/Contact';
 import News from './components/pages/News';
 import People from './components/people/People';
+import Gallery from './components/pages/Gallery';
+import Profile from './components/pages/Profile';
 function App() {
   return (
     <>
@@ -27,6 +29,8 @@ function App() {
         <Route  path="/connect" element={<Contact/>}/>
         <Route  path="/news" element={<News/>}/>
         <Route  path="/people" element={<People />}/>
+        <Route  path="/gallery" element={<Gallery />}/>
+        <Route  path="/profile" element={<Profile />}/>
         </Routes>
       </Router>
     </>

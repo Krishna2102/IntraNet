@@ -5,6 +5,8 @@ import Navbar from './Navbar';
 import Footer from './footer';
 import Aboutus from './Aboutus';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 const Home = () => {
     const [value, setValue] = useState(new Date());
     const navigate = useNavigate();
@@ -24,7 +26,7 @@ const Home = () => {
     <p className="mt-4 font-semibold">
       An Atmosphere Of Cooperation And Helpfulness With A Patient Listening Ear To Our Students.
     </p>
-    <button className="mt-6 px-6 py-2 bg-violet-600 font-bold rounded hover:bg-gray-100 hover:text-violet-600" onClick={() => navigate("/aboutus")}>
+    <button className="mt-6 px-6 py-2 bg-violet-900 font-bold rounded hover:bg-gray-100 hover:text-violet-950" onClick={() => navigate("/aboutus")}>
       
       Know More
     </button>
@@ -60,12 +62,35 @@ const Home = () => {
         </li>
       ))}
     </ul>
+
+<Link to="/news" className="block text-violet-600 mt-4">More News......</Link>
+
+
   </div>
 
   {/* Events Section */}
   <div>
     <h2 className="text-xl font-bold mb-4">Events</h2>
-    <p>No Future Events</p>
+    <ul className="space-y-4">
+      {[1, 2, 3].map((item, index) => (
+        <li
+          key={index}
+          className="bg-slate-100 flex flex-col sm:flex-row shadow-md rounded overflow-hidden"
+        >
+          
+          <div className="p-4">
+            <p className="text-sm text-gray-500">04 April, 2025</p>
+            <p className="font-semibold mt-1">
+              Details Regarding M.Tech Admissions
+            </p>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+  <Link to="/events" className="block text-violet-600 mt-4">Upcoming Events......</Link>
+
+
   </div>
 
   {/* Calendar Section */}
@@ -76,7 +101,7 @@ const Home = () => {
 
 
       {/* Gallery Section */}
-      <section className="bg-violet-600 text-white py-10 text-center">
+      <section className="bg-violet-950 text-white py-10 text-center">
         <div className="grid grid-cols-4 gap-6 px-8">
           <div>
             <h3 className="text-3xl font-bold">62+</h3>
@@ -97,7 +122,7 @@ const Home = () => {
         </div>
       </section>
       {/* gallery */}
-      <section className="px-8 py-12 bg-gray-50">
+      <section className="px-8 py-12 ">
   <h2 className="text-2xl font-bold text-iris mb-6 text-center">Photo Gallery</h2>
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     {[

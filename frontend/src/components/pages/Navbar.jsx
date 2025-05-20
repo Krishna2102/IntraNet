@@ -12,7 +12,7 @@ const MenuItem = ({ label, items, to, closeMobileMenu }) => {
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setOpen(false), 700);
+    timeoutRef.current = setTimeout(() => setOpen(false), 200);
   };
 
   const handleClick = () => {
@@ -29,7 +29,7 @@ const MenuItem = ({ label, items, to, closeMobileMenu }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className="flex items-center cursor-pointer text-lg font-medium text-gray-700 hover:text-violet-600"
+        className="flex items-center cursor-pointer text-lg font-medium hover:text-violet-950"
         onClick={handleClick}
       >
         {label}
@@ -45,7 +45,7 @@ const MenuItem = ({ label, items, to, closeMobileMenu }) => {
       </div>
 
       {open && items && (
-        <div className="absolute left-0 mt-2 bg-white border rounded w-40 z-50">
+        <div className="absolute left-0 mt-2 bg-white border rounded w-[130px] z-50">
           {items.map((item, index) => (
             <div
               key={index}
@@ -78,7 +78,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white px-6 py-4 flex items-center justify-between relative z-50">
+    <nav className="bg-white px-6 py-4 flex items-center justify-between relative z-50 shadow-lg">
       {/* Logo */}
       <div className="flex items-center gap-2">
         <img
@@ -87,10 +87,10 @@ export default function Navbar() {
           className="h-[50px] w-[50px]"
         />
         <div>
-          <h1 className="text-sm sm:text-lg font-bold text-violet-700">
+          <div className="text-xl sm:text-lg font-serif font-bold text-violet-950">
             Mathematical And Computational Sciences (MACS)
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-600">NITK</p>
+          </div>
+          <p className="text-xs sm:text-sm font-serif font-bold text-violet-950">NITK</p>
         </div>
       </div>
 
@@ -117,22 +117,20 @@ export default function Navbar() {
       <div
         className={`${
           menuOpen ? "flex" : "hidden"
-        } absolute top-[100%] right-0 w-full flex-col bg-white border-t px-6 py-4 space-y-4 md:static md:flex md:flex-row md:space-y-0 md:space-x-6 md:items-center md:ml-auto md:w-auto`}
+        } absolute top-[100%] right-0 w-full flex-col  border-t px-[60px] py-4 space-y-4 md:static md:flex md:flex-row md:space-y-0 md:space-x-6 md:items-center md:ml-auto md:w-auto`}
       >
         <MenuItem label="Home" to="/" closeMobileMenu={closeMobileMenu} />
         <MenuItem
           label="About"
           items={[
             { label: "Aboutus", to: "/aboutus" },
-            { label: "History", to: "/history" },
-            { label: "Connect Us", to: "/contact" },
+            { label: "Connect Us", to: "/connect" },
           ]}
           closeMobileMenu={closeMobileMenu}
         />
         <MenuItem
           label="Academics"
           items={[
-            { label: "Programmes", to: "/programmes" },
             { label: "Courses", to: "/courses" },
             { label: "Time Table", to: "/time-table" },
             { label: "Research", to: "/research" },
@@ -142,10 +140,8 @@ export default function Navbar() {
         <MenuItem
           label="People"
           items={[
-            { label: "Faculty", to: "/faculty" },
-            { label: "Staff", to: "/staff" },
-            { label: "Students", to: "/students" },
-            { label: "Committees", to: "/committees" },
+            { label: "Faculty", to: "/people" },
+            { label: "Staff", to: "/people" },
           ]}
           closeMobileMenu={closeMobileMenu}
         />
