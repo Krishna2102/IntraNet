@@ -14,7 +14,8 @@ const Profile = () => {
           className="w-32 h-32 rounded-full mx-auto mb-4"
         />
         <h2 className="text-xl font-bold mb-2">Krishna Kumar Jena</h2>
-        <p className="text-sm text-black mb-4">🎓 M C A Student @ NITK, Surathkal</p>
+        <h3 className="font-bold mb-2">234CA030</h3>
+        <p className="text-sm text-black mb-4 font-bold">🎓 M C A Student @ NITK, Surathkal</p>
         <button className="bg-green-600 px-4 py-2 text-white rounded hover:bg-green-700 text-sm">
           ✎ Edit Profile
         </button>
@@ -30,8 +31,8 @@ const Profile = () => {
         {/* Personal Details */}
         <Section title="Personal Details" fields={[
           "Father's Name", "Date of Birth", "Email address", "Nationality",
-          "Phone", "Name in Hindi", "Gender", "Blood Group Type", "Mother Tongue",
-          "Aadhaar Number", "Parents Phone Number"
+          "Phone", "Gender", "Blood Group Type", 
+          "Aadhaar Number", 
         ]} />
 
         {/* Address Details */}
@@ -41,15 +42,15 @@ const Profile = () => {
 
         {/* Academic Details */}
         <Section title="Academic Details" fields={[
-          "Roll Number", "Registration Number", "Branch", "Degree",
-          "Category", "Date of Admission"
+          "Roll Number", "Registration Number", "Department","Branch"
         ]} />
 
         {/* Hostel Details */}
         <Section title="Hostel Details" fields={[
-          "Hostel Room"
+          "Hostel Name","Hostel Room"
         ]} />
       </div>
+      
     </div>
     <Footer/>
     </div>
